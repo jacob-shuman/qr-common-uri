@@ -1,0 +1,45 @@
+{
+  "name": "qr-common-uri",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "description": "Utility functions for generating strings for uri schemes commonly used in qr codes",
+  "homepage": "https://github.com/jacob-shuman/qr-common-uri#readme",
+  "author": "Jacob Shuman",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacob-shuman/qr-common-uri.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jacob-shuman/qr-common-uri/issues"
+  },
+  "keywords": [
+    "qr",
+    "uri",
+    "typescript"
+  ],
+  "scripts": {
+    "barrel": "barrelsby --delete --directory ./src --name ./index.ts --include ./utils/*",
+    "esbuild": "esbuild --keep-names --minify --bundle --outfile=./dist/index.js ./src/index.ts",
+    "types": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "build": "run-s barrel esbuild types",
+    "build-watch": "watch 'npm run build' ./src/utils",
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "barrelsby": "^2.4.0",
+    "esbuild": "^0.15.6",
+    "eslint": "^8.23.0",
+    "jest": "^28.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2",
+    "watch": "^1.0.2"
+  }
+}
