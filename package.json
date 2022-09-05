@@ -15,7 +15,7 @@
     "build-watch": "watch 'npm run build' ./src/utils",
     "test": "jest",
     "test-watch": "jest --watch",
-    "publish": "npm run build && npm run test && npm publish"
+    "prepublish": "npm run build && npm run test"
   },
   "devDependencies": {
     "@types/jest": "^29.0.0",
