@@ -1,29 +1,35 @@
 import { mailto } from "../src/index";
 
 describe("mailto", () => {
-  test("only address", () => {
-    expect(mailto("foo@example.com")).toEqual("mailto:foo@example.com");
+  test("single address", () => {
+    expect(mailto(["foo@example.com"])).toEqual("mailto:foo@example.com");
   });
 
-  test("cc", () => {
+  test("multiple addresses", () => {
+    expect(mailto(["foo@example.com", "bar@example.com"])).toEqual(
+      "mailto:foo@example.com,bar@example.com"
+    );
+  });
+
+  test("with cc", () => {
     expect(
-      mailto("foo@example.com", {
+      mailto(["foo@example.com"], {
         cc: ["bar@example.com"],
       })
     ).toEqual("mailto:foo@example.com?cc=bar%40example.com");
   });
 
-  test("bcc", () => {
+  test("with bcc", () => {
     expect(
-      mailto("foo@example.com", {
+      mailto(["foo@example.com"], {
         bcc: ["bar@example.com", "baz@example.com"],
       })
     ).toEqual("mailto:foo@example.com?bcc=bar%40example.com,baz%40example.com");
   });
 
-  test("subject", () => {
+  test("with subject", () => {
     expect(
-      mailto("foo@example.com", {
+      mailto(["foo@example.com"], {
         subject: "Do not reply to this email",
       })
     ).toEqual(
@@ -31,9 +37,9 @@ describe("mailto", () => {
     );
   });
 
-  test("subject", () => {
+  test("with body", () => {
     expect(
-      mailto("foo@example.com", {
+      mailto(["foo@example.com"], {
         body: "This is a scam! What is you're credit card number?",
       })
     ).toEqual(
