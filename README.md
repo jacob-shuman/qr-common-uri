@@ -1,6 +1,7 @@
 # qr-common-uri
 
 [![npm](https://img.shields.io/npm/v/qr-common-uri.svg)](https://www.npmjs.com/package/qr-common-uri)
+[![CI](https://github.com/jacob-shuman/qr-common-uri/actions/workflows/ci.yml/badge.svg)](https://github.com/jacob-shuman/qr-common-uri/actions/workflows/ci.yml)
 
 QR codes can contain plain text as well as a variety of standardized [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)'s. Each URI's scheme can open commonly used applications on desktop and mobile devices.
 
