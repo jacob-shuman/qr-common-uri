@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "Utility functions for generating strings for uri schemes commonly used in qr codes",
   "homepage": "https://github.com/jacob-shuman/qr-common-uri#readme",
   "author": "Jacob Shuman",
@@ -20,8 +21,8 @@
   ],
   "scripts": {
     "barrel": "barrelsby --delete --directory ./src --name ./index.ts --include ./utils/*",
-    "esbuild": "esbuild --keep-names --minify --bundle --outfile=./dist/index.js ./src/index.ts",
-    "types": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "esbuild": "esbuild --keep-names --platform=node --minify --bundle --outfile=./dist/index.js ./src/index.ts",
+    "types": "tsc --declaration --emitDeclarationOnly --outDir ./dist",
     "build": "run-s barrel esbuild types",
     "build-watch": "watch 'npm run build' ./src/utils",
     "test": "jest",
