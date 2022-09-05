@@ -1,24 +1,12 @@
 {
   "name": "qr-common-uri",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Utility functions for generating strings for uri schemes commonly used in qr codes",
   "homepage": "https://github.com/jacob-shuman/qr-common-uri#readme",
   "author": "Jacob Shuman",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jacob-shuman/qr-common-uri.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jacob-shuman/qr-common-uri/issues"
-  },
-  "keywords": [
-    "qr",
-    "uri",
-    "typescript"
-  ],
   "scripts": {
     "barrel": "barrelsby --delete --directory ./src --name ./index.ts --include ./utils/*",
     "esbuild": "esbuild --keep-names --platform=node --minify --bundle --outfile=./dist/index.js ./src/index.ts",
@@ -26,7 +14,8 @@
     "build": "run-s barrel esbuild types",
     "build-watch": "watch 'npm run build' ./src/utils",
     "test": "jest",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "publish": "npm run build && npm run test && npm publish"
   },
   "devDependencies": {
     "@types/jest": "^29.0.0",
@@ -42,5 +31,17 @@
     "ts-node": "^10.9.1",
     "typescript": "^4.8.2",
     "watch": "^1.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacob-shuman/qr-common-uri.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jacob-shuman/qr-common-uri/issues"
+  },
+  "keywords": [
+    "qr",
+    "uri",
+    "typescript"
+  ]
 }
