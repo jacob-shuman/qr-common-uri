@@ -10,3 +10,8 @@ export const paramify = (rawParams: Record<string, any> = {}): string => {
 
   return (params.length ? "?" : "") + params;
 };
+
+export const formatPhoneNumber = (
+  number: string,
+  options: { countryCode?: string } = {}
+): string => (options?.countryCode ? `+${options?.countryCode}` : "") + number;
