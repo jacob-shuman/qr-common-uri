@@ -6,6 +6,8 @@ describe("facetime", () => {
   });
 
   test("audio", () => {
-    expect(facetime("1112223333", "audio")).toEqual("facetime:1112223333");
+    expect(facetime("1112223333", "audio")).toEqual(
+      "facetime-audio:1112223333"
+    );
   });
 });
