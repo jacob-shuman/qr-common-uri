@@ -2,7 +2,7 @@ import { paramify } from "../global";
 
 /**
  * Generate a link to open the device's default mail client with prefilled `options`
- * @param address recipient addresses
+ * @param addresses recipient addresses
  * @param options additional prefilled fields
  */
 export const mailto = (
