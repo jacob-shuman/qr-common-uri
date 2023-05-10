@@ -42,6 +42,7 @@
   "keywords": [
     "qr",
     "uri",
+    "scheme",
     "typescript"
   ]
 }
